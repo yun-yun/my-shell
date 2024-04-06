@@ -22,7 +22,7 @@ if [ -f /usr/bin/cri-dockerd ]; then
 fi
 
 cdtgz_path=$(find . -name 'cri-dockerd*.tgz')
-if [ -z "$cdtgz_path" ]; then
+if [ -f "$cdtgz_path" ]; then
   echo "cri-dockerd.tgz文件不存在"
   download_cri_dockerd
   install_cri_dockerd
