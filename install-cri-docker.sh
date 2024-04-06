@@ -15,7 +15,7 @@ function download_cri_dockerd() {
 }
 
 
-if[ -f /usr/bin/cri-dockerd ]; then
+if [ -f /usr/bin/cri-dockerd ]; then
   echo "cri-dockerd已安装"
   cri-dockerd -v
   exit 0
