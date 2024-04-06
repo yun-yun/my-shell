@@ -15,5 +15,5 @@ if [ ! -f /usr/bin/docker ]; then
   docker -v
 else
   echo "Docker已安装"
-  docker -v
+  sh -x docker -v
 fi
