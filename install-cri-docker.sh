@@ -90,7 +90,7 @@ function download_cri_dockerd() {
 
 function start_service() {
     systemctl daemon-reload
-    systemctl enable cri-docker --now
+    systemctl enable cri-docker
     systemctl restart cri-docker
     systemctl is-active cri-docker
     systemctl status cri-docker
@@ -102,11 +102,11 @@ if [ -f /usr/bin/cri-dockerd ]; then
 else
   cdtgz_path=$(find . -name 'cri-dockerd*.tgz')
   if [ -f "$cdtgz_path" ]; then
-    echo "cri-dockerd.tgz文件不存在"
+    echo "cri-dockerd.tgz文件存在"
     download_cri_dockerd
     install_cri_dockerd
   else
-    echo "cri-dockerd.tgz文件存在"
+    echo "cri-dockerd.tgz文件不存在"
     install_cri_dockerd
   fi
 fi
