@@ -1,11 +1,6 @@
 #!/bin/bash
 
 function install_cri_dockerd_service() {
-    if [ ! -f /usr/lib/systemd/system/cri-docker.service ]; then
-        echo "/usr/lib/systemd/system/cri-docker.service已配置"
-        return;
-    fi
-
     cat /usr/lib/systemd/system/cri-docker.service << EOF
     [Unit]
     Description=CRI Interface for Docker Application Container Engine
@@ -34,10 +29,6 @@ EOF
 }
 
 function install_cri_dockerd_socket() {
-    if [ ! -f /usr/lib/systemd/system/cri-docker.socket ]; then
-        echo "/usr/lib/systemd/system/cri-docker.socket已配置"
-        return;
-    fi
   cat > /usr/lib/systemd/system/cri-docker.socket <<"EOF"
            [Unit]
            Description=CRI Docker Socket for the API
