@@ -66,7 +66,6 @@ function rewrite_containerd_config() {
       echo "Error: Failed to comment out line '$DISABLED_PLUGINS_LINE' in $CONFIG_FILE."
       rm "$CONFIG_FILE"  # 撤销修改
       mv "$CONFIG_FILE.bak" "$CONFIG_FILE"  # 恢复备份
-      exit 1
   fi
 
   echo "cri-docker (containerd) service has been restarted."
