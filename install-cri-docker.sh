@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function install_cri_dockerd_service() {
-    cat /usr/lib/systemd/system/cri-docker.service << EOF
+    cat > /usr/lib/systemd/system/cri-docker.service << EOF
     [Unit]
     Description=CRI Interface for Docker Application Container Engine
     Documentation=https://docs.mirantis.com
